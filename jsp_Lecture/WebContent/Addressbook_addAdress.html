@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title></title>
+  </head>
+  <style type="text/css">
+    * {padding: 0; margin: 0;}
+    ul {list-style-type: none;}
+    div {width: 300px; margin: 0 auto; text-align: right; box-sizing: border-box; }
+    li {margin-right: 20px;margin-top: 5px;}
+    legend {text-align: left; margin-left: 20px;}
+    fieldset { padding: 20px 0;}
+    .top, .middle, .bottom {display: inline-block; width: 50px; text-align: center;}
+    .top, .middle {margin-right: 10px;}
+  </style>
+  <body>
+    <div class="">
+      <fieldset>
+        <legend>주소 추가</legend>
+        <form class="" action="address_add.jsp" method="post">
+          <ul>
+            <li>전화번호 : <input class="top" type="text" name="top" value=""><input class="middle" type="text" name="middle" value=""><input class="bottom" type="text" name="bottom" value=""></li>
+            <li>이름 : <input type="text" name="name" value=""></li>
+            <li>우편번호 : <input type="text" name="post_num" value=""></li>
+            <li>도 : <input type="text" name="city_do" value=""></li>
+            <li>시 : <input type="text" name="city_si" value=""></li>
+            <li>지번 : <input type="text" name="lot_num" value=""></li>
+            <li> <input type="submit" name="" value="보내기"> </li>
+          </ul>
+        </form>
+      </fieldset>
+    </div>
+  </body>
+</html>

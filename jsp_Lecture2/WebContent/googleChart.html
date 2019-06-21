@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		var queryObject = "";
+		var queryObjectLen = "";
+
+		$.ajax({
+			type : 'POST',
+			url : 'getdata.jsp',
+			dataType : 'JSON',
+			success : function(data) {
+				queryObject = eval('(' + JSON.stringify(data) + ')');
+				queryObjectLen = queryObject.empdetails.length;
+			},
+			error:function(request,status,error){
+	        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			}
+		});
+
+		google.charts.load('current', {'packages' : ['corechart']});
+		google.setOnLoadCallback(drawChart);
+
+		function drawChart() {
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'name');
+			data.addColumn('number', 'empid');
+			for (var i = 0; i < queryObjectLen; i++) {
+				var name = queryObject.empdetails[i].name;
+				var empid = queryObject.empdetails[i].empid;
+				data.addRows([
+					[name, parseInt(empid)]
+				]);
+			}
+
+			var options = {
+				title : 'Employee Information',
+				fontSize : 20,
+				height : 400,
+			}
+			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+			chart.draw(data, options);
+		}
+	</script>
+	<title>Insert title here</title>
+</head>
+<body>
+	<div id="chart_div">
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>개인정보 입력 화면</title>
+<style>
+	* {margin: 0; padding: 0;}
+	div {margin: 30px auto; width: 300px;}
+	.text-input {text-align: right;}
+</style>
+</head>
+<body>
+	<div>
+	<h2>개인 정보 입력</h2>
+	<form action="/brain/Pinfo_result" method="get">
+		<div class="text-input">
+		<label>이름: <input  type="text" name="NAME"></label><br>
+		<label>아이디: <input type="text" name="ID"></label><br>
+		<label>패스워드: <input type="password" name="PASSWORD"></label><br><br>
+		</div>
+		성별:
+			<label>남<input type="radio" name="GENDER" value="male"></label>
+			<label>여<input type="radio" name="GENDER" value="female"></label><br><br>
+		메일 수신 여부:<br>
+			<label>공지 메일<input type="checkbox" name="INOTICE"></label>
+			<label>광고 메일<input type="checkbox" name="CNOTICE"></label>
+			<label>배송 확인 메일<input type="checkbox" name="DNOTICE"></label><br><br>
+		직업:
+		<SELECT NAME="JOB">
+			<option>회사원</option>
+			<option>학생</option>
+			<option>기타</option>
+		</SELECT><br><br>
+		<input type="submit" value="확인">
+		<input type="reset" value="취소">
+	</form>
+	</div>
+</body>
+</html>

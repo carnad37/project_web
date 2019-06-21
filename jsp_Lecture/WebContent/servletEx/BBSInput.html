@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=EUC-KR">
+<title>BBS input</title>
+<style>
+	textarea {margin: 15px 0;}
+</style>
+</head>	
+<body>
+	<form action="BBSPostServlet" method="post">
+		이름 : <input type="text" name="name"><br>
+		제목 : <input type="text" name="title"><br>
+		<textarea cols="40" rows="10" name="content"></textarea><br>
+		<input type="submit" value="저장">
+		<input type="reset" value="취소">
+	</form>
+</body>
+</html>
